@@ -1,0 +1,19 @@
+import sys
+import smtplib
+
+to = sys.argv[1]
+subject = sys.argv[2]
+message = sys.argv[3]
+mail_user = 'mail@youremail.com'
+mail_pwd = 'yourpassword'
+smtpserver = smtplib.SMTP("smtp.googlemail.com",587)
+smtpserver.ehlo()
+smtpserver.starttls()
+smtpserver.ehlo
+smtpserver.login(mail_user, mail_pwd)
+header = 'To:' + to + '\n' + 'From: ' + mail_user + '\n' + 'Subject:'+subject+' \n'
+print header
+msg = header + '\n '+message+' \n\n'
+smtpserver.sendmail(mail_user, to, msg)
+print 'done!'
+smtpserver.close()
