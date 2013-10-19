@@ -5,6 +5,6 @@ Please follow steps below to make this script works,
 1. Login to your zabbix admin page
 2. Open "Media types" page from "Administration" > "Media Types"
 3. Click on button "Create Media type", then change Type to "Script"
-4. Fill all fields and script name field with "zabbixtp", then click Save
-5. Open "Actions" page from "Configuration" > "Action", please custom alert messages, conditions, and other configs that fits your needs.
-6. Now time to place zabbixtp file to your zabbix path, login to terminal and place zabixtp file on /usr/lib/zabbix/alertscripts/ (may be different, depends on your zabbix version or OS)
+4. Fill all fields and fill "script name" field with "zabbixtp", then click Save
+5. Open "Actions" page from "Configuration" > "Action", adjust your alert messages, conditions, and other configs that fits your needs.
+6. Now time to place zabbixtp file to your zabbix path, login to terminal and place zabixtp file on /usr/lib/zabbix/alertscripts/ (may be different, depends on your zabbix version or OS, please check on your zabbix_server.conf)
