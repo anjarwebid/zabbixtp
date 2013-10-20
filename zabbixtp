@@ -3,11 +3,18 @@
 import sys
 import smtplib
 
+# by default, zabbix pass 3 command-line variables to your script,
+# first parameter for mail destination, second parameter to mail subject and the last parameter for mail message.
+
+# read 1st parameter, mail address
 to = sys.argv[1]
+# read 2nd parameter, subject email
 subject = sys.argv[2]
+# read 3rd parameter, message
 message = sys.argv[3]
 mail_user = 'mail@youremail.com'
 mail_pwd = 'yourpassword'
+# google smtp server just for example, please adjust with your smtp server address and port.
 smtpserver = smtplib.SMTP("smtp.googlemail.com",587)
 smtpserver.ehlo()
 smtpserver.starttls()
@@ -17,5 +24,5 @@ header = 'To:' + to + '\n' + 'From: ' + mail_user + '\n' + 'Subject:'+subject+' 
 print header
 msg = header + '\n '+message+' \n\n'
 smtpserver.sendmail(mail_user, to, msg)
-print 'done!'
 smtpserver.close()
+print 'done!'
